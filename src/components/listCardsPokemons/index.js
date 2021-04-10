@@ -4,10 +4,11 @@ import { useHistory, withRouter } from "react-router";
 import { loadGetAllPokemons } from "../../store/pokemon/pokemonActions";
 import Input from "../UI/input";
 import Pagination from "../UI/pagination";
+import PokeballLoader from "../UI/pokeballLoader";
 import SmallPokemonCard from "../UI/smallPokemonCard";
 
 const CardListPokemons = (props) => {
-  const { onLoadAllPokemons, pokemons, count } = props;
+  const { onLoadAllPokemons, pokemons, count, loading } = props;
   const history = useHistory();
   const [searchState, setSearchState] = useState("");
   const [paginationState, setPaginationState] = useState({
@@ -35,6 +36,7 @@ const CardListPokemons = (props) => {
 
   return (
     <div className="list-cards-pokemons-container">
+      {loading && <PokeballLoader />}
       <div className="list-cards-pokemons-container-search">
         <Input
           name="searchPokemon"
@@ -58,6 +60,7 @@ const CardListPokemons = (props) => {
             );
           })}
       </div>
+
       <div className="list-cards-pokemons-container-paging">
         <Pagination
           count={count}

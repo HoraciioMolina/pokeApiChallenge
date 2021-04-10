@@ -55,7 +55,7 @@ const loadGetPokemonByIdFail = (state, error) => {
 const loadGetAllPokemonsStart = (state) => {
   return updateObject(state, {
     allPokemons: updateObject(state.allPokemons, {
-      loading: false,
+      loading: true,
       error: null,
       pokemons: [],
     }),
