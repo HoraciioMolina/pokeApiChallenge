@@ -2,17 +2,12 @@ import React from "react";
 import { formatThreeIntegerDigits } from "../../../assets/shared/formatsNumber";
 
 const index = (props) => {
-  const {
-    onClick, //imageUrl,
-    name,
-    id,
-  } = props;
+  const { onClick, imageUrl, name, id } = props;
 
   return (
     <div className="pokemon-card-container" onClick={() => onClick(id)}>
       <div className="pokemon-card-container-image">
-        {/*<img alt="" src={imageUrl} />*/}
-        img
+        <img alt="" src={imageUrl} />
       </div>
       <div className="pokemon-card-container-info">
         <div className="pokemon-card-container-info-name">{name}</div>

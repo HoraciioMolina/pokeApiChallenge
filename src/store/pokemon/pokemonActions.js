@@ -8,7 +8,7 @@ const loadGetAllPokemons = (limit, offset) => {
       limit,
       offset,
       (response) => {
-        dispatch(loadGetAllPokemonsSuccess(response.data.results));
+        dispatch(loadGetAllPokemonsSuccess(response.pokemons, response.count));
       },
       (error) => {
         dispatch(loadGetAllPokemonsFail(error));
@@ -23,10 +23,11 @@ const loadGetAllPokemonsStart = () => {
   };
 };
 
-const loadGetAllPokemonsSuccess = (pokemons) => {
+const loadGetAllPokemonsSuccess = (pokemons, count) => {
   return {
     type: actionTypes.GET_ALL_POKEMONS_SUCCESS,
     pokemons,
+    count,
   };
 };
 
