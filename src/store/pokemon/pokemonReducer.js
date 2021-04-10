@@ -6,6 +6,7 @@ const intialState = {
     loading: false,
     error: null,
     pokemons: [],
+    count: 0,
   },
   pokemonById: {
     loading: false,
@@ -54,18 +55,19 @@ const loadGetPokemonByIdFail = (state, error) => {
 const loadGetAllPokemonsStart = (state) => {
   return updateObject(state, {
     allPokemons: updateObject(state.allPokemons, {
-      loading: false,
+      loading: true,
       error: null,
       pokemons: [],
     }),
   });
 };
 
-const loadGetAllPokemonsSuccess = (state, pokemons) => {
+const loadGetAllPokemonsSuccess = (state, pokemons, count) => {
   return updateObject(state, {
     allPokemons: updateObject(state.allPokemons, {
       loading: false,
       pokemons,
+      count,
     }),
   });
 };
@@ -93,7 +95,7 @@ const pokemonReducer = (state = intialState, action) => {
     case actionTypes.GET_ALL_POKEMONS_START:
       return loadGetAllPokemonsStart(state);
     case actionTypes.GET_ALL_POKEMONS_SUCCESS:
-      return loadGetAllPokemonsSuccess(state, action.pokemons);
+      return loadGetAllPokemonsSuccess(state, action.pokemons, action.count);
     case actionTypes.GET_ALL_POKEMONS_FAIL:
       return loadGetAllPokemonsFail(state, action.error);
 
