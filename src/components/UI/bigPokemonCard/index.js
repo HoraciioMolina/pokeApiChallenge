@@ -63,8 +63,9 @@ const BigPokemonCard = (props) => {
           <div className="big-pokemon-card-container-detail-body-column">
             <div className="big-pokemon-card-container-detail-body-column-text">
               <div>Types</div>
-              {types.map((type) => (
+              {types.map((type, index) => (
                 <div
+                  key={index}
                   className={[
                     "big-pokemon-card-container-detail-body-column-text-type",
                     colorTypes[type] !== undefined
@@ -78,8 +79,8 @@ const BigPokemonCard = (props) => {
             </div>
             <div className="big-pokemon-card-container-detail-body-column-text">
               <div>Abilities</div>
-              {abilities.map((ability) => (
-                <div>{ability}</div>
+              {abilities.map((ability, index) => (
+                <div key={index}>{ability}</div>
               ))}
             </div>
           </div>
