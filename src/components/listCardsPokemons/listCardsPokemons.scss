@@ -1,0 +1,14 @@
+.list-cards-pokemons-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  &-search {
+    display: flex;
+  }
+  &-body {
+    display: flex;
+    max-width: 640px;
+    flex-wrap: wrap;
+  }
+}

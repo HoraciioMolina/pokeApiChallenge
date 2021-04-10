@@ -1,0 +1,9 @@
+.input-container {
+  margin: 5px;
+  &-icon {
+  }
+}
+
+.input-container input:focus {
+  outline: none;
+}

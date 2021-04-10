@@ -1,0 +1,87 @@
+.big-pokemon-card-container {
+  display: flex;
+  width: 500px;
+  min-height: 200px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 5px;
+  background-color: white;
+  border-radius: 3px;
+  &-image {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+  }
+  &-detail {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &-header {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      width: 100%;
+      padding-left: 20px;
+      &-name {
+        letter-spacing: 1px;
+        font-weight: 500;
+        font-size: xx-large;
+      }
+      &-id {
+        padding-left: 10px;
+        font-weight: 400;
+        font-size: x-large;
+        opacity: 0.6;
+        padding-top: 5px;
+      }
+    }
+    &-body {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      &-column {
+        display: flex;
+        flex-direction: column;
+        &-text {
+          display: flex;
+          flex-direction: column;
+          font-size: small;
+          font-weight: 500;
+          opacity: 0.7;
+          margin: 5px;
+          &-type {
+            display: flex;
+            margin: auto;
+            padding: 2px 5px 2px 5px;
+            border-radius: 3px;
+            margin-left: 0;
+            margin-top: 4px;
+            color: white;
+            font-size: x-small;
+          }
+        }
+      }
+    }
+  }
+}
+
+.type {
+  &-fire {
+    background-color: #ee8130;
+  }
+  &-water {
+    background-color: #30e0ee;
+  }
+  &-poison {
+    background-color: #5330ee;
+  }
+  &-grass {
+    background-color: #39ee30;
+  }
+  &-default {
+    background-color: #1b1b1b;
+  }
+}

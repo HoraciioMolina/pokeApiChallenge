@@ -1,0 +1,23 @@
+.detail-card-pokemon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-button-text {
+      font-size: small;
+      opacity: 0.7;
+    }
+  }
+  &-volver {
+    display: flex;
+    justify-content: center;
+  }
+  &-button-volver {
+    font-size: medium;
+    font-weight: 500;
+  }
+}
